@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+server.log
+heartbeat.log
+server.pid
+*.log
+.DS_Store
+.env

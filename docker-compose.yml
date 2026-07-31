@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  drug-explorer:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request, sys; urllib.request.urlopen('http://localhost:3000/health')"]
+      interval: 30s
+      retries: 5
+    # Ensures run for months if host stays up. For 3-day requirement, Docker restart policy keeps it alive.
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 0
