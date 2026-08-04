@@ -1,6 +1,8 @@
 node_modules
 .next
 out
+out-pages
+index.txt
 server.log
 heartbeat.log
 server.pid
