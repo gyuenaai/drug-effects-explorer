@@ -25,6 +25,7 @@ export interface Drug {
   overdoseSigns: string[];
   withdrawal: string;
   color: string; // accent
+  easterEgg?: string; // optional playful note shown on the profile and in any mix containing it
 }
 
 export const drugs: Drug[] = [
@@ -476,7 +477,7 @@ export const drugs: Drug[] = [
     aliases: ["NOS", "Whippets", "Laughing Gas", "Balloons"],
     category: "Inhalant / Dissociative",
     pharmacologyClass: ["dissociative", "depressant"],
-    addictionPotential: "Low-moderate psychological",
+    addictionPotential: "Low-Moderate - psychological",
     danger: 3,
     legal: "Legal for medical/catering, misuse restricted some places",
     description: "Inhaled anaesthetic gas causing 30-60s dissociative euphoria. Low acute risk isolated but B12 depletion and asphyxia risk.",
@@ -520,7 +521,8 @@ export const drugs: Drug[] = [
     mind: "Lifts mood and motivation for most people; in excess it causes anxiety, racing thoughts and irritability. Regular users often feel merely 'normal' after their dose - much of the lift is relief of withdrawal.",
     overdoseSigns: ["Vomiting, severe agitation, confusion", "Very fast or irregular heartbeat", "Tremors, seizures (large ingestions of pills/powder)"],
     withdrawal: "Headache, fatigue, low mood, irritability and poor concentration for 2-9 days after stopping regular use.",
-    color: "#6f4e37"
+    color: "#6f4e37",
+    easterEgg: "If you find yourself mixing White Monster and Espresso and moving to New York, please consider seeing a medical professional. You may be beyond help."
   },
   {
     id: "2cb",

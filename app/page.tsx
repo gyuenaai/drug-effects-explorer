@@ -17,6 +17,12 @@ function dangerLabel(danger: number): string {
   return "Lower (still risky)";
 }
 
+// Show the full severity level (e.g. "Very High", "Extremely High") without the
+// trailing qualifier, so the badge never reads "Very addiction" / "Extremely addiction".
+function addictionLabel(potential: string): string {
+  return potential.split(/\s-\s|,|~/)[0].trim();
+}
+
 export default function Page() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("All");
@@ -107,7 +113,7 @@ export default function Page() {
                           <div key={i} className={`risk-block ${i <= drug.danger ? `filled danger-${drug.danger}` : ""}`} />
                         ))}
                       </div>
-                      <span className="addiction-badge" title="Addiction potential">{drug.addictionPotential.split(" ")[0]} addiction</span>
+                      <span className="addiction-badge" title="Addiction potential">{addictionLabel(drug.addictionPotential)} addiction</span>
                     </div>
                     <div style={{ fontSize: 11, color: "var(--faint)" }}>{drug.onset}</div>
                   </div>
@@ -177,6 +183,8 @@ function SingleView({ drug, onRemove }: { drug: Drug, onRemove: () => void }) {
         <div className="section-title"><span className="dot" /> What it does</div>
         <p style={{ fontSize: 13.5, lineHeight: 1.5, color: "#252c33", margin: 0 }}>{drug.description}</p>
       </div>
+
+      {drug.easterEgg && <div className="easter-egg">☕ {drug.easterEgg}</div>}
 
       <div className="section">
         <div className="section-title"><span className="dot" style={{ background: "var(--danger-low)" }} /> Potential benefits (medical context & perceived)</div>
@@ -248,6 +256,10 @@ function MixView({ selected, mix, onClear, onRemove }: { selected: Drug[], mix: 
         <div className="mix-level">Overall: {mix.level.toUpperCase()} {mix.level==="extreme"?"— AVOID":"— risky combination"}</div>
         <div className="mix-summary">{mix.summary}</div>
       </div>
+
+      {selected.filter(d => d.easterEgg).map(d => (
+        <div key={d.id} className="easter-egg">☕ {d.easterEgg}</div>
+      ))}
 
       <div className="section">
         <div className="section-title"><span className="dot" style={{ background: dangerColor(5) }} /> Pairwise interactions ({mix.interactions.length}) — worst first</div>

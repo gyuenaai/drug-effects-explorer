@@ -508,6 +508,21 @@ h3 { font-size: 16px; }
 .hr-box strong { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
 .hr-box p { font-size: 13px; color: #2f363e; margin: 6px 0 0 0; line-height: 1.45; }
 
+/* easter egg — playful note (e.g. caffeine) */
+.easter-egg {
+  margin-top: 14px;
+  padding: 11px 13px;
+  background: #f3ede4;
+  border: 1px dashed #b98a5e;
+  border-left: 3px solid #6f4e37;
+  border-radius: 9px;
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #4a3728;
+  line-height: 1.5;
+}
+
 /* disclaimer */
 .disclaimer {
   margin-top: 22px;
