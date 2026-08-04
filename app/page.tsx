@@ -51,7 +51,7 @@ export default function Page() {
         <div className="header-inner">
           <div className="brand">
             <div className="brand-mark">S</div>
-            <div className="brand-title">Substance Effects Archive <span>20 substances · educational · harm-reduction focused</span></div>
+            <div className="brand-title">Substance Effects Archive <span>23 substances · educational · harm-reduction focused</span></div>
           </div>
           <div className="header-meta">
             <span><strong>{drugs.length}</strong> profiles</span>

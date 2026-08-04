@@ -10,10 +10,10 @@ Both are GitHub Pages deployments (out/ and out-pages/). No local process needed
 ---
 
 
-Lightweight educational web application that outlines effects of 20 commonly discussed drugs (excluding OTC analgesics like Aspirin/Tylenol). 
+Lightweight educational web application that outlines effects of 23 commonly discussed drugs (excluding OTC analgesics like Aspirin/Tylenol). 
 
 **Features:**
-- Top 20 drugs: Cannabis, Alcohol, Nicotine, Cocaine, Heroin, MDMA, LSD, Psilocybin, Methamphetamine, Amphetamine/Adderall, Oxycodone, Fentanyl, Benzodiazepines, Ketamine, PCP, DMT, Anabolic Steroids, Nitrous Oxide, Caffeine, 2C-B
+- Top 23 drugs: Cannabis, Alcohol, Nicotine, Cocaine, Heroin, MDMA, LSD, Psilocybin, Methamphetamine, Amphetamine/Adderall, Oxycodone, Fentanyl, Benzodiazepines, Ketamine, PCP, DMT, Anabolic Steroids, Nitrous Oxide, Caffeine, 2C-B, GHB, Poppers, Morphine
 - For each: benefits (medical where evidence exists), immediate effects, short-term risks, long-term effects, long-term risks, how it affects brain / heart / body / mind, overdose signs, withdrawal
 - Click a drug → sidepanel shows human effects
 - Multi-select → sidepanel shows mixing analysis with pairwise interaction levels (low / moderate / high / extreme), mechanism, summary, and aggregated human impact
@@ -110,7 +110,7 @@ meta nest-lightweight.app create \
   --bundle-file=file:///path/to/nest-bundle.mjs \
   --source-commit=$(hg id -i) \
   --title='Substance Effects Archive' \
-  --description='Educational 20-drug effects + interaction mixer' \
+  --description='Educational 23-drug effects + interaction mixer' \
   --oncall=nest
 ```
 
@@ -136,7 +136,7 @@ This creates a lightweight app that runs indefinitely on Nest infra (no 3-day li
 ```
 app/
   page.tsx      # main UI, mix logic
-  data.ts       # 20 drugs + 50+ interaction pairs + generic fallback
+  data.ts       # 23 drugs + 65+ interaction pairs + generic fallback
   globals.css   # custom design system (no tailwind, no purple)
   layout.tsx
 out/            # static export (after build)
